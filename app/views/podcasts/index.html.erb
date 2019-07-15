@@ -1,0 +1,32 @@
+<h1>Podcasts#index</h1>
+<p>Find me in app/views/podcasts/index.html.erb</p>
+
+<div class= "container">
+    <table class="table table-hover">
+    <% @podcasts.each do |podcast| %>
+
+    <tbody>
+    <tr>
+       <td><%= podcast.name %></td>
+
+       <td><%= podcast.paiduser %></td>
+
+       <td><%= podcast.duration %></td>
+
+       <td><% podcast.user%><td>
+        
+       <td><%= link_to "play", "#", class: 'btn btn-outline-success' %></td>
+
+       <td><%= link_to "vote", "#", class: 'btn btn-outline-info' %></td>
+       <td><%= link_to "comment", "#", class: 'btn btn-outline-warning' %></td>
+       
+       <td><%= link_to "delete", podcast, method: :delete, class: 'btn btn-outline-danger' %></td>
+       
+    </tr>
+
+    <% end %>
+    </tbody>
+    </table>
+
+</div>
+

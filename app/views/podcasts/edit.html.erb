@@ -1,0 +1,9 @@
+<div class="form-group">
+<%= form_with model: Podcast, local: true  do |f|%>
+   <%= f.label :name, "Name your Podcast" %>
+
+    <%= f.text_field :name %>
+
+    <%= f.submit 'Create Podcast'%>
+<% end %>
+</div>
