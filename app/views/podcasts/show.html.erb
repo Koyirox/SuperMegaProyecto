@@ -1,2 +1,5 @@
 <%= @podcast.name%>
+
 <%= time_ago_in_words @podcast.created_at %>
+
+<%= link_to "play", @podcast.file, class: "html5"%>

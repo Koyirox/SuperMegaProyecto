@@ -3,14 +3,26 @@
 
 
 <div class="form-group">
-<%= form_with model: @podcast, local: true  do |f|%>
+
+<%= form_with model: @podcast, local: true do |f|%>
+
+<div class = "field">
 
    <%= f.label :name, "Name your Podcast" %>
 
     <%= f.text_field :name %>
 
-    <%= f.label :file %>
+</div>
+
+<div class = "field">
+
+   <%= f.label :file, "Name your Podcast" %>
+
     <%= f.file_field :file %>
+    
+</div>
+
+   
 
     <%= f.submit 'Create Podcast'%>
 <% end %>

@@ -13,6 +13,9 @@ class PodcastsController < ApplicationController
     
     @podcast = Podcast.new(podcast_params)
     @podcast.user = current_user
+
+    @podcast.file.attach(podcast_params)
+
     @podcast.save
     redirect_to podcasts_path
   end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   post 'podcasts', to: 'podcasts#create'
 
-  get 'podcast/:id', to: 'podcasts#show', as: 'post'
+  get 'podcast/:id', to: 'podcasts#show'
 
   get 'podcasts/:id/edit', to: 'podcasts#edit'
 
