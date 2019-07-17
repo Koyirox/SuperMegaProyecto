@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   
 
-  resources :podcasts
+  resources :podcasts do
+    resources :comments
+  end
 
   get 'podcasts/new'
 

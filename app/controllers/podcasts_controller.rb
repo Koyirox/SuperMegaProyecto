@@ -24,6 +24,7 @@ class PodcastsController < ApplicationController
   def show
 
     @podcast = Podcast.find(params[:id])
+    @comments = Comment.where(podcast_id: @podcast).order("created_at DESC")
    
   end 
 
