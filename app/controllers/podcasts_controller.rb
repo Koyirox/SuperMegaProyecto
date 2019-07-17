@@ -2,6 +2,7 @@ class PodcastsController < ApplicationController
   before_action :authenticate_user!, except: [:show,:index]
   def index
    @podcasts = Podcast.all
+  
   end
 
   def new
@@ -14,14 +15,16 @@ class PodcastsController < ApplicationController
     @podcast = Podcast.new(podcast_params)
     @podcast.user = current_user
 
-    @podcast.file.attach(podcast_params)
+   
 
     @podcast.save
     redirect_to podcasts_path
   end
 
   def show
+
     @podcast = Podcast.find(params[:id])
+   
   end 
 
   def edit
