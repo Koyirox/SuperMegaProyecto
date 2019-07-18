@@ -10,6 +10,10 @@ Podcast.destroy_all
 
 10.times {|i| Podcast.create(
     name: Faker::Artist.name,
-    paiduser: false,
-    duration: Faker::Commerce.price
+    
 )}
+
+#paiduser: false,
+    #duration: Faker::Commerce.price
+
+#AdminUser.create!(email: 'admin@example.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
