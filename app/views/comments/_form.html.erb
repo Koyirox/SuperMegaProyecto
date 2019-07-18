@@ -1,8 +1,16 @@
 <%= form_for([@podcast, @podcast.comments.build]) do |f|%>
 
+<br>
+<h5> Leave a comment: </h5>
+
 <%= f.text_area :content %>
 
-<%= f.submit %>
+<button type="button" class="btn btn-success"><%= f.submit %></button>
+
+
 
 <% end%>
+
+
+
 

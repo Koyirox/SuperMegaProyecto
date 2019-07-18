@@ -1,6 +1,6 @@
-<%= @podcast.name%>
 
-<%= time_ago_in_words @podcast.created_at %>
+
+
 
 
  
@@ -8,11 +8,33 @@
  
   
   
-<audio controls>
- <source src='<%= url_for(@podcast.file) %>' type="audio/mpeg"> 
- </audio>
 
 
-<%= render 'comments/comment'%>
+
+
+<div class ="container">
+
+        
+        <audio controls ="media center">
+        <source src='<%= url_for(@podcast.file) %>' type="audio/mpeg"> 
+        </audio>
+        
+    
+
+        <h5 class="card-title"><%= @podcast.name%><h5>
+    
+        <%= time_ago_in_words @podcast.created_at %>
+        
+
+       <p> <%= render 'comments/comment'%> </p>
+
+   
+
+        
+</div>
+
+
+
+
 
  
