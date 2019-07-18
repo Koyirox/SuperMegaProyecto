@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
     before_action :find_podcast
     before_action :find_comment, only: [:destroy]
+    
     def create
         @comment = @podcast.comments.create(params[:comment].permit(:content))
         @comment.user_id = current_user.id

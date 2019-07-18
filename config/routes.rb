@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get 'search', to: "podcasts#search"
+
   get 'podcasts/new'
 
   post 'podcasts', to: 'podcasts#create'

@@ -1,9 +1,17 @@
 class PodcastsController < ApplicationController
   before_action :authenticate_user!, except: [:show,:index]
+
   def index
+    if params[:q].present?
+      @podcasts = Podcast.where('name like ?', "%#{params[:q]}%")
+    else
    @podcasts = Podcast.all
+    end
   
   end
+
+  
+
 
   def new
     @podcast = Podcast.new
@@ -44,6 +52,8 @@ class PodcastsController < ApplicationController
     @podcast.destroy
     redirect_to podcasts_path
   end
+
+  
 
   private
 
