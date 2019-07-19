@@ -30,9 +30,10 @@
 
        
        
-       <td><%= link_to "delete", podcast, method: :delete, class: 'btn btn-outline-danger' %></td>
 
-       
+        <% if can?(:destroy, :podcast)%>
+              <td><%= link_to "delete", podcast, method: :delete, class: 'btn btn-outline-danger' %></td>
+        <% end %>
     </tr>
 
     <% end %>
