@@ -4,8 +4,11 @@
 
 <%= comment.content %>
 
-<%= link_to "Delete comment",  [comment.podcast, comment], method: :delete %>
-
+    <% if can?(:destroy, comment)%>                                                                                                                                            
+    <%= link_to "Delete comment",  [comment.podcast, comment], method: :delete %>
+    <% end %>
 <% end %>
 
 <%= render 'comments/form'%>
+
+

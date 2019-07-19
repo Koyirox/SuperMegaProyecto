@@ -4,7 +4,7 @@
     <title>Laferos</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
 
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-N8DsABZCqc1XWbg/bAlIDk7AS/yNzT5fcKzg/TwfmTuUqZhGquVmpb5VvfmLcMzp" crossorigin="anonymous">
    
@@ -21,6 +21,8 @@
 
 
     <%= render 'layouts/jumbotron'%>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>

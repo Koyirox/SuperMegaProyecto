@@ -1,8 +1,13 @@
-<h1>Podcasts#index</h1>
-<p>Find me in app/views/podcasts/index.html.erb</p>
+<%# <h1>Podcasts#index</h1>
+<p>Find me in app/views/podcasts/index.html.erb</p> %>
 
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Listen some Podcast!</h1>
+  </div>
+</div>
 
-
+<br>
 
 <div class="btn btn-success btn-lg btn-block">
   <%= link_to 'Crea', new_podcast_path, :class => "btn" %> 
@@ -12,26 +17,34 @@
 <br>
 
 <div class= "container">
-    <table class="table table-hover">
-    <% @podcasts.each do |podcast| %>
+    <table class="table table-dark table-hover">
 
+    <thead>
+    <tr>
+      
+      <th scope="col">Podcast name:</th>
+      <th scope="col">Likes:</th>
+      <th scope="col">Created by:</th>
+    </tr>
+    </thead>
+
+    <% @podcasts.each do |podcast| %>
+    
     <tbody>
     <tr>
+
+        
        <td><%= podcast.name %></td>
-
-       <td><%= podcast.countLike %></td>
-        
+        <td><%= podcast.countLike %></td>
+       <td><%= podcast.user.email %></td>
 
        
-        
-       
+
 
        <td><%= link_to "show", podcast, class: 'btn btn-outline-success' %></td>
 
-       
-       
 
-        <% if can?(:destroy, :podcast)%>
+        <% if can?(:destroy, podcast)%>
               <td><%= link_to "delete", podcast, method: :delete, class: 'btn btn-outline-danger' %></td>
         <% end %>
     </tr>
