@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   resources :podcasts do
+    resources :likes 
     resources :comments
+    
   end
 
   get 'search', to: "podcasts#search"

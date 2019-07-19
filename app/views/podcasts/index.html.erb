@@ -18,10 +18,9 @@
     <tbody>
     <tr>
        <td><%= podcast.name %></td>
-        
-       
 
-       
+       <td><%= podcast.countLike %></td>
+        
 
        
         
@@ -29,11 +28,11 @@
 
        <td><%= link_to "show", podcast, class: 'btn btn-outline-success' %></td>
 
-       <td><%= link_to "vote", "#", class: 'btn btn-outline-info' %></td>
+       
        
        <td><%= link_to "delete", podcast, method: :delete, class: 'btn btn-outline-danger' %></td>
 
-      
+       
     </tr>
 
     <% end %>

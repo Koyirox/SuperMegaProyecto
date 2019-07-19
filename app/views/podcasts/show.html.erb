@@ -21,12 +21,13 @@
         
     
 
-        <h5 class="card-title"><%= @podcast.name%><h5>
-    
+        <h5 class="card-title"><%= @podcast.name%><%= button_to 'Like', podcast_likes_path(@podcast), method: :post %><h5>
+        
         <%= time_ago_in_words @podcast.created_at %>
         
+        <p><%= @podcast.likes.count %> <%= (@podcast.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
-       <p> <%= render 'comments/comment'%> </p>
+        <p> <%= render 'comments/comment'%> </p>
 
    
 
